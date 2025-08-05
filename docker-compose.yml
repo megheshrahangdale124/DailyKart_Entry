@@ -19,7 +19,8 @@ services:
     restart: always
 
   java_app:
-    image: snehcreate/expensetracker_v3
+    build: 
+     context: .
     container_name: expensesapp
     environment:
       SPRING_DATASOURCE_USERNAME: root
