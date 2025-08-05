@@ -1,5 +1,17 @@
 version: "3.8"
 services:
+  nginx:
+    build: ./ingnx
+    image: ingnx
+    container_name: "nginx_cont"
+    ports:
+      - "80:80"
+    networks:
+      - expenses-app-nw
+    restart: always
+    depends_on:
+      - java_app
+
   mysql:
     image: mysql:latest
     container_name: mysql
